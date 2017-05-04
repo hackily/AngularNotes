@@ -24,16 +24,15 @@ const NOTES: Note[] = [
   templateUrl: './app.component.html',
   
   styleUrls: ['./app.component.css'],
-  styles: [` //Can in-file style as well. These are scoped only to this component. Yay!
+  styles: [`
     .selected {
-      background-color: #CFD8DC;
+      background-color: #CFD8DC !important;
       color: white;
     }
     .notes {
       margin: 0 0 2em 0;
       list-style-type: none;
       padding: 0;
-      width: auto;
     }
     .notes li {
       cursor: pointer;
@@ -46,10 +45,10 @@ const NOTES: Note[] = [
       border-radius: 4px;
     }
     .notes li.selected:hover {
-      background-color: #BBD8DC;
+      background-color: #BBD8DC !important;
       color: white;
     }
-    .notes li.hover {
+    .notes li:hover {
       color: #607D8B;
       background-color: #DDD;
       left: .1em;
@@ -80,7 +79,10 @@ const NOTES: Note[] = [
     <h1>{{title}}</h1>
     <h2>My Notes!</h2>
     <ul class="notes">
-      <li *ngFor="let note of notes" (click)="onSelect(note)">
+      <li *ngFor="let note of notes" 
+        [class.selected]="note === selectedNote"
+        (click)="onSelect(note)" 
+      >
         <span class="note-content">{{note.id}}</span>{{note.name}}
       </li>
     </ul>
