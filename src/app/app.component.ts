@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-
-export class Note {
-  id: number;
-  name: string;
-  content: string;
-}
+import { Note } from './components/note';
 
 const NOTES: Note[] = [
   { id: 1, name: 'Note 1', content: 'Do not microwave forks'},
@@ -20,7 +15,7 @@ const NOTES: Note[] = [
 ]
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-root', //Selects the <app-root> element in index.html
   templateUrl: './app.component.html',
   
   styleUrls: ['./app.component.css'],
@@ -86,15 +81,7 @@ const NOTES: Note[] = [
         <span class="note-content">{{note.id}}</span>{{note.name}}
       </li>
     </ul>
-    <div *ngIf="selectedNote">
-      <h2>{{selectedNote.name}} details!</h2>
-      <div><label>id: </label>{{selectedNote.id}}</div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="selectedNote.name" placeholder="name"/><br>
-        <textarea [(ngModel)]="selectedNote.content"></textarea>
-      </div>
-    </div>
+    <note-detail [note]="selectedNote"></note-detail>
   `,
 
   //
