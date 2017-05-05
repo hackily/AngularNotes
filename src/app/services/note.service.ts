@@ -7,6 +7,10 @@ import { NOTES } from '../data/mock-notes';
 //Not necessarily needed, but future proofs it. Good practice to always include it.
 @Injectable()
 export class NoteService{
+  getNote(id: number): Promise<Note> {
+    return this.getNotesAsync()
+      .then(notes => notes.find(note => note.id === id));
+  }
   getNotesAsync(): Promise<Note[]> { //Would get data somewhere. Web service, local storage, mock data source.
     return new Promise((resolve) => {
       resolve(NOTES);
