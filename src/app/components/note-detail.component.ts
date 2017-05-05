@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'; //Need these decorators.
-import { Note } from './note';
+import { Note } from '../data/note';
 
 //@Component decorator provides Angular metadata. CSS selector name will match the tag.
 //Later, can add <note-detail> element to AppComponent template.
