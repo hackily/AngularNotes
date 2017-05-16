@@ -2,8 +2,8 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './components/dashboard.component';
-import { NotesComponent } from './components/notes.component';
-import { NoteDetailComponent } from './components/note-detail.component';
+import { PlanetsComponent } from './components/planets.component';
+import { PlanetDetailComponent } from './components/planet-detail.component';
 
 //No declarations - that's the responsibility of companion module.
 //If guard services exist, Routing Module adds module 'providers'
@@ -11,8 +11,8 @@ import { NoteDetailComponent } from './components/note-detail.component';
 //Pull routes into a variable, clarifies the pattern.
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'notes', component: NotesComponent },
-  { path: 'notes/detail/:id', component: NoteDetailComponent },
+  { path: 'planets', component: PlanetsComponent },
+  { path: 'planets/detail/:id', component: PlanetDetailComponent },
   { path: 'dashboard', component: DashboardComponent }
 ]
 

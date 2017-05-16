@@ -1,4 +1,4 @@
-export class Note {
+export class Planet {
   id: number;
   name: string;
   content: string;

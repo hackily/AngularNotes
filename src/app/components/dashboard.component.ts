@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Note } from '../data/note';
-import { NoteService } from '../services/note.service';
+import { Planet } from '../data/planet';
+import { PlanetService } from '../services/planet.service';
 
 @Component({
   selector: 'my-dashboard',
@@ -9,12 +9,12 @@ import { NoteService } from '../services/note.service';
 })
 
 export class DashboardComponent implements OnInit {
-  notes: Note[] = [];
+  planets: Planet[] = [];
   
-  constructor(private noteService: NoteService){}
+  constructor(private planetService: PlanetService){}
 
   ngOnInit(): void {
-    this.noteService.getNotesAsync()
-    .then(notes => this.notes = notes.slice(1,5));
+    this.planetService.getPlanetsAsync()
+    .then(planets => this.planets = planets.slice(1,5));
   }
 };
