@@ -16,6 +16,7 @@ import { PlanetsComponent } from './components/planets.component';
 import { PlanetDetailComponent } from './components/planet-detail.component';
 import { DashboardComponent } from './components/dashboard.component';
 import { PlanetService } from './services/planet.service';
+import { PlanetSearchComponent } from './components/planet-search.component';
 
 //TODO: Figure out what app.module does.
 @NgModule({
@@ -25,7 +26,8 @@ import { PlanetService } from './services/planet.service';
     AppComponent,
     PlanetsComponent,
     PlanetDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    PlanetSearchComponent
 
   ],
   //Only module dependencies go in here.
